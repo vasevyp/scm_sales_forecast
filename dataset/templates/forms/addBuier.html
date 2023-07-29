@@ -1,0 +1,53 @@
+{% extends 'base-forecast.html' %}
+
+{% block title %}{{ block.super }}: AddBuier{% endblock title %}
+
+
+
+{% block content %}
+<div class="row">
+  <!--col-->
+  <div class="col-lg-6 col-md-8 col-sm-10  mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <strong class="card-title font125">Добавить Заказчика</strong>
+      </div>
+      <div class="card-body">
+        <!-- card -->
+        <div id="pay-invoice">
+          <div class="card-body">
+            <form action="#" method="post" novalidate="novalidate">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="name" class="control-label mb-1">Наименование заказчика</label>
+                {{ form.name }}
+              </div>
+
+              <div class="form-group">
+                <label for="name" class="control-label mb-1">Код (8 цифр)</label>
+                {{ form.code }}
+              </div>
+              <div class="form-group">
+                <label for="address" class="control-label mb-1">Адрес</label>
+                {{ form.address }}
+              </div>
+              <div class="form-group">
+                <label for="address" class="control-label mb-1">Контакты</label>
+                {{ form.contact }}
+              </div>
+              <div>
+                <button id="payment-button" type="submit" class="btn btn-sm mt-3 btn-bg-dark btn-block">
+                  <span id="payment-button-amount">Добавить</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /card -->
+      </div>
+    </div>
+
+  </div>
+  <!--/.col-->
+</div>
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends 'base-forecast.html' %}
+{% load static %}
+{% block title %} {{block.super }}: Товары {% endblock %} {{number}}
+{% block content %}
+<div class="col-12 mx-auto">
+  <span class="font125-b ms-3">Товары</span> &nbsp; &nbsp;<span>Всего позиций: {{goods_count}}</span>
+
+  <table class="table table-striped demotable">
+    <thead style="position: sticky;
+  top: 2rem;
+  z-index:1;background: #9d9e9e;">
+      <tr>
+        <th scope="col">№</th>
+        <th scope="col">Код</th>
+        <th scope="col">Наименование</th>
+        <th scope="col">Категория</th>
+        <th scope="col">Поставщик</th>
+        <th scope="col">Ед.изм.</th>
+        <th scope="col">COGS,руб</th>
+        <th scope="col">Цена, руб</th>
+        <th scope="col">Поставка,дн.</th>
+        <th scope="col">Упак.ед.</th>
+        <th scope="col">Вес,кг</th>
+        <th scope="col">Длина,м</th>
+        <th scope="col">Ширина,м</th>
+        <th scope="col">Высота,м</th>
+        <th scope="col">Создан</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items%}
+      <tr>
+        <th scope="row">{{item.code}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.supplier}}</td>
+        <td>{{item.unit}}</td>
+        <td>{{item.unit_cost}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.delivery_time}}</td>
+        <td>{{item.supply_pack}}</td>
+        <td>{{item.pack_weight}}</td>
+        <td>{{item.pack_length}}</td>
+        <td>{{item.pack_width}}</td>
+        <td>{{item.pack_height}}</td>
+        <td>{{item.created_date|date:"d-m-Y"}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

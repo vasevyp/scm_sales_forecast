@@ -1,0 +1,51 @@
+{% extends 'base-forecast.html' %}
+
+{% block title %}{{ block.super }}:AddItemCategory{% endblock title %}
+
+
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-6 col-md-8 col-sm-10  mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <strong class="card-title font125">Добавить категорию</strong>
+      </div>
+      <div class="card-body">
+        <!-- Card -->
+        <div id="pay-invoice">
+          <div class="card-body">
+            <form action="#" method="post" novalidate="novalidate">
+
+              {% csrf_token %}
+
+
+              <div class="form-group">
+                <label for="name" class="control-label mb-1">Наименование категории</label>
+                {{ form.name }}
+              </div>
+
+              <div class="form-group">
+                <label for="name" class="control-label mb-1">Код (6 цифр)</label>
+                {{ form.code }}
+              </div>
+
+
+              <div>
+                <button id="payment-button" type="submit" class="btn btn-sm my-3 btn-bg-dark btn-block">
+                  <span id="payment-button-amount">Добавить</span>
+                </button>
+              </div>
+
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div> <!-- .card -->
+
+  </div>
+  <!--/.col-->
+</div>
+{% endblock content %}

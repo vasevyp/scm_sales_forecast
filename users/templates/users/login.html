@@ -1,0 +1,24 @@
+{% extends 'base-forecast.html' %}
+
+{% block title %}
+{{ block.super }}: Login
+{% endblock %}
+
+<!-- {% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %} -->
+
+{% block content %}
+<div class="container col-6 mx-auto mb-3">
+  <h5>Login</h5>
+  <span>Если Вы не зарегистированы, перейдите на страницу регистрации - <a class="btn btn-outline-secondary "
+      href="{% url 'register' %}">Регистрация</a></span>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
+  </form>
+</div>
+
+{% endblock %}

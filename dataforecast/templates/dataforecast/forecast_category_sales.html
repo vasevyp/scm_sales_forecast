@@ -1,0 +1,42 @@
+{% extends 'base-forecast.html' %}
+{% load static %}
+{% block title %} {{block.super }}: Прогноз продаж по категории {% endblock %} {{number}}
+{% block content %}
+<div class="col-12 mx-auto">
+    <span class="font125-b ms-3">Прогноз продаж по категориям товаров</span> &nbsp; &nbsp;<span>Всего позиций:
+        {{items_by_category_count}}</span>
+
+    <table class="table table-striped demotable">
+        <thead style="position: sticky;
+  top: 2rem;
+  z-index:1;background: #9d9e9e;">
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Дата</th>
+                <th scope="col">День недели</th>
+                <th scope="col">Код</th>
+                <th scope="col">Категория</th>
+                <th scope="col">Прогноз продаж, &#8381</th>
+                <th scope="col">median_error=(факт-прогноз)/прогноз, %</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in forecast%}
+            <tr>
+                <th scope="row">{{item.date|date:"d-m-Y"}}</th>
+                <td>{{item.weekday}}</td>
+                <td>{{item.code}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.forecast}}</td>
+                <td>{{item.median_error}}%</td>
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

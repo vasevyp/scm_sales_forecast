@@ -1,0 +1,224 @@
+.custom {
+  color: #ebeef1;
+  background: #3a3837;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+body {
+  font-size: 0.7rem !important;
+}
+
+.navbutt {
+  color: #ebeef1;
+  background: #3a3837;
+  /* font-size: 1rem; */
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.btn-bg {
+  color: #ebeef1;
+  background: #8a97ac;
+}
+
+.btn-bg-dark {
+  color: #ebeef1;
+  background: #596982;
+}
+
+.fz-07REM {
+  font-size: 0.7rem;
+}
+
+.font-b {
+  font-weight: 600;
+}
+
+.font80 {
+  font-size: 0.8rem;
+}
+
+.font150-b {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.font125 {
+  font-size: 1.25rem;
+}
+
+.font125-b {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.font100 {
+  font-size: 1rem;
+}
+
+.font100-b {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.font-light {
+  color: #f8f5f4
+}
+
+.font-yellow {
+  color: rgb(243, 243, 118);
+}
+
+.font-black {
+  color: #0b0b0a
+}
+
+.font-red {
+  color: red;
+}
+
+.font-pur {
+  color: #56524f
+}
+
+.font-pur:hover {
+  color: #f8f5f4
+}
+
+.font-blue {
+  color: rgb(5, 22, 151)
+}
+
+.font-bgc {
+  color: #667893
+}
+
+
+
+.bgc-green {
+  background-color: green;
+}
+
+.bgc-grey {
+  background-color: rgb(208, 210, 208);
+}
+
+.bgc-head {
+  background-color: #667893;
+
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+hr {
+  color: #ebeef1;
+}
+
+.ht05 {
+  font-size: 0.5rem;
+}
+
+/*закрепление заголовка таблицы*/
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  /* background: white; */
+}
+
+.tab-head {
+  margin: 0;
+}
+
+
+
+/* END закрепление заголовка таблицы*/
+/*Ограничение времени показа {{message}}*/
+.message {
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+/*END Ограничение времени показа {{message}}*/
+/* Автонумерация строк таблицы. Начинать подсчёт со второй и более строки */
+.demotable {
+  border-collapse: collapse;
+  counter-reset: schetchik;
+}
+
+.demotable tbody tr:nth-child(n+1) {
+  counter-increment: schetchik;
+}
+
+.demotable td,
+.demotable tbody tr:before {
+  padding: .1em .5em;
+  border: 1px solid #E7D5C0;
+}
+
+.demotable tbody tr:before {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.demotable tbody tr:before,
+.demotable b:after {
+  content: counter(schetchik);
+  color: #978777;
+}
+
+.demotable tbody tr:nth-child(-n+0):before {
+  content: "";
+}
+
+/* END Автонумерация строк таблицы. Начинать подсчёт со второй и более строки  */
+
+.pagination {
+  /* border: solid #56524f */
+  width: 50vw;
+  margin: auto;
+  font-size: 1rem;
+}
+
+.pagination_a {
+  margin: 0 0.25rem;
+  text-decoration: none;
+  border: #667893 1px solid;
+  border-radius: 0.25rem;
+  padding: 2px;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}

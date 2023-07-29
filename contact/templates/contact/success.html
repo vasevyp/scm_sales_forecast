@@ -1,0 +1,15 @@
+{% extends 'base-forecast.html' %}
+{% load static %}
+{% block title %}
+{{block.super }}: Контакты
+{% endblock %}
+
+{% block content %}
+<div class="container mx-4 my-5">
+    <h2 class="text-success mx-5 my-5 ">Ваше сообщение успешно отправлено!</h2>
+    <h4 class="my-4 mx-5"> Вы можете отправить другое сообщение, перейдите на
+        <a class="text-decoration-none" href=" {% url 'contact' %}">Страницу Контактов</a></h4>
+</div>
+
+
+{% endblock %}

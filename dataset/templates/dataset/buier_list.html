@@ -1,0 +1,40 @@
+{% extends 'base-forecast.html' %}
+{% block title %} {{ block.super }}: Заказчики
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <h5>Заказчики</h5>
+  <table class="table table-striped demotable ">
+    <thead style="position: sticky;
+  top: 2.2rem;
+  z-index:1;background: #9d9e9e;">
+      <tr>
+        <th scope="col">№</th>
+        <th scope="col">Name</th>
+        <th scope="col">Code</th>
+        <th scope="col">id</th>
+        <th scope="col">address</th>
+        <th scope="col">Contact</th>
+        <th scope="col">created_date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for buier in buiers%}
+      <tr>
+        <th scope="row">{{buier.name}}</th>
+        <td>{{buier.code}}</td>
+        <td>{{buier.id}}</td>
+        <td>{{buier.address}}</td>
+        <td>{{buier.contact}}</td>
+        <td>{{buier.created_date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

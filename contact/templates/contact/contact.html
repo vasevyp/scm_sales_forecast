@@ -1,0 +1,42 @@
+{% extends 'base-forecast.html' %}
+{% load static %}
+{% block title %}
+{{block.super }}: Контакты
+{% endblock %}
+
+{% block content %}
+<div class="container mx-5 ">
+    <h4>Наши контакты:</h4>
+    <hr style="border: 2px solid #667893; width:90vw;  ">
+    <dl class="row text-center font100">
+        <dt class=" col-sm-2 ">E-maile:</dt>
+        <dd class="col-sm-2">
+            <p>info@sczl.ru</p>
+        </dd>
+        <dt class=" col-sm-2 ">Телефон:</dt>
+        <dd class="col-sm-2">
+            <p>+7 966 339 9018</p>
+        </dd>
+        <dt class=" col-sm-2 ">Telegram:</dt>
+        <dd class="col-sm-2">
+            <p>@sczl</p>
+        </dd>
+    </dl>
+    <hr style="border: 2px solid #667893; width:90vw;">
+
+    <h5>Оставьте сообщение:</h5>
+    <hr>
+    <form method="post" action="" enctype="multipart/form-data" class="post-form">
+        {% csrf_token %}
+        <table class="col-sm-3 font100">
+            {{form.as_table}}
+        </table>
+        <button type="submit" class="save btn btn-bg-dark">Отправить</button>
+    </form>
+</div>
+
+
+
+
+
+{% endblock %}

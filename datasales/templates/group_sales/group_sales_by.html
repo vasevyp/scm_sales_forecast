@@ -1,0 +1,32 @@
+{% extends 'base-forecast.html' %}
+{% load static %}
+
+{% block title %}
+{{ block.super }}: LoadingData
+{% endblock %}
+
+{% block content %}
+<div class="container overflow-hidden">
+    <div class="row mt-5 gy-5">
+        <div class="col-6">
+            <div class="p-3 border bg-light">
+                <h5>Сгруппировать продажи по категориям товаров </h5>
+                <div class="my-2 ms-5 btn btn-bg "><a class="text-decoration-none
+            text-reset" href="{% url 'sales_group_by_category' %}">Формирование продаж по категориям товаров</a></div>
+
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="p-3 border bg-light">
+                <h5>Сгруппировать продажи по поставщикам</h5>
+                <div class="my-2 ms-5 btn btn-bg "><a class="text-decoration-none
+            text-reset" href="{% url 'sales_group_by_supplier' %}">Формирование продаж по поставщикам</a></div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

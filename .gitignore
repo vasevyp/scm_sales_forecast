@@ -1,0 +1,17 @@
+*.log
+*.pot
+*.pyc
+__pycache__/
+
+db.sqlite3
+media
+scm_sales_forecast/secret_settings.py
+.env
+.venv
+env/
+
+# Visual Studio Code # 
+.vscode/* 
+
+
+
